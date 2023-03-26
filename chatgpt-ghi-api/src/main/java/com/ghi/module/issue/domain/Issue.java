@@ -26,7 +26,7 @@ public class Issue extends BaseEntity implements Serializable {
     /**
      * 唯一key
      */
-    @TableField(value = "key")
+    @TableField(value = "`key`")
     private String key;
 
     /**
