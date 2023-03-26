@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ghi.module.spiderRepo.mapper.SpiderRepoMapper">
+
+    <resultMap id="BaseResultMap" type="com.ghi.module.spiderRepo.domain.SpiderRepo">
+            <result property="id" column="id" jdbcType="INTEGER"/>
+            <result property="spider_record_id" column="spider_record_id" jdbcType="INTEGER"/>
+            <result property="repo_id" column="repo_id" jdbcType="INTEGER"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="deleted" column="deleted" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,spider_record_id,repo_id,
+        create_time,update_time,deleted
+    </sql>
+</mapper>

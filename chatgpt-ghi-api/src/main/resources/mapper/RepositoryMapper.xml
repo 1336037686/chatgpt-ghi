@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ghi.module.repository.mapper.RepositoryMapper">
+
+    <resultMap id="BaseResultMap" type="com.ghi.module.repository.domain.Repository">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="repo_title" column="repo_title" jdbcType="VARCHAR"/>
+            <result property="repo_url" column="repo_url" jdbcType="VARCHAR"/>
+            <result property="repo_desc" column="repo_desc" jdbcType="VARCHAR"/>
+            <result property="repo_language" column="repo_language" jdbcType="VARCHAR"/>
+            <result property="stars" column="stars" jdbcType="INTEGER"/>
+            <result property="forks" column="forks" jdbcType="INTEGER"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="deleted" column="deleted" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,repo_title,repo_url,
+        repo_desc,repo_language,stars,
+        forks,create_time,update_time,
+        deleted
+    </sql>
+</mapper>
