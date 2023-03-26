@@ -91,7 +91,7 @@ public class GitHubTrendingSpiderJob {
         else log.error("数据抓取失败");
         // 保存数据
         String key = UUID.randomUUID().toString().replace("-", "");
-        SpiderRecord spiderRecord = new SpiderRecord().setKey(key).setStatus(execSuccess ? "0" : "1");
+        SpiderRecord spiderRecord = new SpiderRecord().setKey(key).setStatus(execSuccess ? "1" : "0");
         spiderRecordService.save(spiderRecord);
         if (execSuccess && CollectionUtil.isNotEmpty(gitHubTrendingData)) {
             // 执行成功保存抓取数据
