@@ -2,6 +2,8 @@ package com.ghi.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,20 +13,24 @@ import org.springframework.stereotype.Component;
  * @Description: SystemProxyConfig
  * @Version 1.0.0
  */
-@Component
+@Configuration
+@ConfigurationProperties(prefix = "app.proxy")
 @Data
 public class SystemProxyConfig {
 
     /**
+     * 是否开启代理
+     */
+    private Boolean enable;
+
+    /**
      * ip
      */
-    @Value("${app.proxy.ip}")
     private String ip;
 
     /**
      * 端口
      */
-    @Value("${app.proxy.port}")
     private Integer port;
 
 }

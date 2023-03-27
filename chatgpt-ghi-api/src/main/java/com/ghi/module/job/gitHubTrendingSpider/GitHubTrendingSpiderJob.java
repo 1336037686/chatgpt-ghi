@@ -15,6 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,6 +36,7 @@ import java.util.concurrent.TimeUnit;
  * @Description: GitHubTrendingSpiderJob
  * @Version 1.0.0
  */
+@ConditionalOnExpression("#{T(com.ghi.config.JobConfig).isDisable('com.ghi.module.job.gitHubTrendingSpider.GitHubTrendingSpiderJob')}")
 @Component
 @Slf4j
 public class GitHubTrendingSpiderJob {

@@ -1,6 +1,7 @@
 package com.ghi.module.reportTrending.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.ghi.config.JobConfig;
 import com.ghi.module.repository.domain.Repository;
 import com.ghi.module.repository.service.RepositoryService;
 import com.ghi.module.repositoryIntro.domain.RepositoryIntro;
@@ -32,6 +33,8 @@ public class ReportTrendingController {
     private RepositoryService repositoryService;
     @Resource
     private RepositoryIntroService repositoryIntroService;
+    @Resource
+    private JobConfig jobConfig;
 
     @GetMapping("getRecord")
     public ResponseEntity<List<SpiderRecord>> doGetSpiderRecord() {

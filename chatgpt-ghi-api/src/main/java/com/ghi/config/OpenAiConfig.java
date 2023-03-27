@@ -2,27 +2,34 @@ package com.ghi.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * OpenAi配置
- * @Auther: LGX
- * @Date: 2023/3/25 13:42
- * @Description: ChatGptConfig
- * @Version 1.0.0
+ * @author LGX_TvT <br>
+ * @version 1.0 <br>
+ * Create by 2023-03-27 09:46 <br>
+ * @description: OpenAiConfig <br>
  */
-@Component
+@Configuration
+@ConfigurationProperties(prefix = "open-ai.config")
 @Data
 public class OpenAiConfig {
 
-    @Value("${openAi.config.apiKey}")
+    /**
+     * api-key
+     */
     private String apiKey;
 
-    @Value("${openAi.config.organizationName}")
+    /**
+     * organization-name
+     */
     private String organizationName;
 
-    @Value("${openAi.config.organizationId}")
+    /**
+     * organization-id
+     */
     private String organizationId;
-
 
 }

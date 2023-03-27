@@ -2,6 +2,7 @@ package com.ghi.module.job.openApiExplain;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.ghi.config.JobConfig;
 import com.ghi.config.OpenAiConfig;
 import com.ghi.config.SystemProxyConfig;
 import com.ghi.module.repository.domain.Repository;
@@ -12,6 +13,7 @@ import com.plexpt.chatgpt.ChatGPTStream;
 import com.plexpt.chatgpt.entity.chat.Message;
 import com.plexpt.chatgpt.util.Proxys;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +34,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * @Description: OpenApiExplainJob
  * @Version 1.0.0
  */
+@ConditionalOnExpression("#{T(com.ghi.config.JobConfig).isDisable('com.ghi.module.job.openApiExplain.OpenApiExplainJob')}")
 @Component
 @Slf4j
 public class OpenApiExplainJob {
