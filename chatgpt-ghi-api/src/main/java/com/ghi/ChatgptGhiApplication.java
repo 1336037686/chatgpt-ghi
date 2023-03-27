@@ -15,5 +15,4 @@ public class ChatgptGhiApplication {
             System.out.println(beanDefinitionName);
         }
     }
-
 }
