@@ -147,7 +147,7 @@ public class GitHubTrendingSpiderJob {
 
                 Repository repository = new Repository()
                         .setRepoTitle(repoTitle).setRepoUrl(repoUrl).setRepoDesc(repoDescription)
-                        .setRepoLanguage(repoLanguage).setStars(repoStarsNum).setForks(repoForksNum);
+                        .setRepoLanguage(repoLanguage).setStars(repoStarsNum).setForks(repoForksNum).setIsIntro("0");
                 res.add(repository);
             }
             return res;

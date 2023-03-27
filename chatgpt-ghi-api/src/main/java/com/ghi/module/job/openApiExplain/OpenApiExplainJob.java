@@ -39,7 +39,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @Slf4j
 public class OpenApiExplainJob {
 
-    // 抓取时间 每天的6点，14点，20点 5分
+    // 抓取时间 每天的6点，14点，20点 10分
     private static final String CRON = "0 10 6,14,20 * * ?";
     // 重试次数
     private static final Integer RETRY_NUM = 3;
