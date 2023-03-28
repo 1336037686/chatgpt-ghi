@@ -5,8 +5,9 @@
    <img alt="ChatGPT-ghi_Logo" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2dfebd1f6905438abc9ee4362479d468~tplv-k3u1fbpfcp-watermark.image">
   </a>
 </p>
-<h1 style="text-align: center">ChatGPT-ghi</h1>
-
+<p align='center' >
+    <font size='50'><b>ChatGPT-ghi</b></font>
+</p>
 <p align="center">
   <a href="#">
    <img alt="maven" src="https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg">
