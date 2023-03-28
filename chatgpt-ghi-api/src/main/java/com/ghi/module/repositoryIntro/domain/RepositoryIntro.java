@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import com.ghi.common.model.BaseEntity;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -20,6 +22,7 @@ public class RepositoryIntro extends BaseEntity implements Serializable {
     /**
      * ID
      */
+    @JsonSerialize(using= ToStringSerializer.class)
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;
 
@@ -38,6 +41,7 @@ public class RepositoryIntro extends BaseEntity implements Serializable {
     /**
      * 项目仓库ID
      */
+    @JsonSerialize(using= ToStringSerializer.class)
     @TableField(value = "repo_id")
     private Long repoId;
 

@@ -9,10 +9,7 @@ import com.ghi.module.repositoryIntro.service.RepositoryIntroService;
 import com.ghi.module.spiderRecord.domain.SpiderRecord;
 import com.ghi.module.spiderRecord.service.SpiderRecordService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,6 +20,7 @@ import java.util.List;
  * @Description: ReportTrendingController
  * @Version 1.0.0
  */
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/reportTrending")
 public class ReportTrendingController {
