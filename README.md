@@ -6,7 +6,7 @@
   </a>
 </p>
 <p align='center' >
-    <font size='50'><b>ChatGPT-ghi</b></font>
+    <font size='70'><b>ChatGPT-ghi</b></font>
 </p>
 <p align="center">
   <a href="#">
