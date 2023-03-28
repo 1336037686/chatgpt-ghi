@@ -36,10 +36,22 @@
 </template>
 
 <script>
+import {getRecord} from "@/apis/reportTrending";
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted() {
+    this.init()
+  },
+  methods: {
+    init () {
+      getRecord().then(res => {
+        console.log(res)
+      })
+    }
   }
 }
 </script>
