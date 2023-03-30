@@ -1,9 +1,11 @@
+server:
+  port: 8082
 spring:
   #数据库配置
   datasource:
-    url: jdbc:mysql://localhost:3306/chatgpt-ghi?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
-    username: xxxx
-    password: xxxx
+    url: jdbc:mysql://gz-cynosdbmysql-grp-04ibiuoj.sql.tencentcdb.com:28876/chatgpt-ghi?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: lgx1121776824.
     driver-class-name: com.mysql.cj.jdbc.Driver
 app:
   proxy:
