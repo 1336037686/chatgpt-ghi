@@ -1,18 +1,19 @@
 package com.ghi.module.reportTrending.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.ghi.config.JobConfig;
 import com.ghi.module.repository.domain.Repository;
 import com.ghi.module.repository.service.RepositoryService;
 import com.ghi.module.repositoryIntro.domain.RepositoryIntro;
 import com.ghi.module.repositoryIntro.service.RepositoryIntroService;
 import com.ghi.module.spiderRecord.domain.SpiderRecord;
 import com.ghi.module.spiderRecord.service.SpiderRecordService;
+import com.github.benmanes.caffeine.cache.Cache;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @Auther: LGX
@@ -32,14 +33,19 @@ public class ReportTrendingController {
     @Resource
     private RepositoryIntroService repositoryIntroService;
     @Resource
-    private JobConfig jobConfig;
+    private Cache<String, Object> caffeineCache;
 
     @GetMapping("getRecord")
     public ResponseEntity<List<SpiderRecord>> doGetSpiderRecord() {
+        if (caffeineCache.asMap().containsKey("spiderRecords")) {
+            List<SpiderRecord> spiderRecords = (List<SpiderRecord>) caffeineCache.asMap().get("spiderRecords");
+            return ResponseEntity.ok(spiderRecords);
+        }
         List<SpiderRecord> spiderRecords = spiderRecordService.list(new LambdaQueryWrapper<SpiderRecord>()
                 .eq(SpiderRecord::getStatus, "1")
                 .orderByDesc(SpiderRecord::getCreateTime)
         );
+        caffeineCache.put("spiderRecords", spiderRecords);
         return ResponseEntity.ok(spiderRecords);
     }
 

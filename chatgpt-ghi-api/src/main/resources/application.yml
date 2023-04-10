@@ -3,10 +3,32 @@ server:
 spring:
   #数据库配置
   datasource:
-    url: jdbc:mysql://gz-cynosdbmysql-grp-04ibiuoj.sql.tencentcdb.com:28876/chatgpt-ghi?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/chatgpt-ghi?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     username: root
-    password: lgx1121776824.
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initialSize: 10
+      maxActive: 20
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 160000
+      maxEvictableIdleTimeMillis: 230000
+      testWhileIdle: true
+      testOnBorrow: true
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+      validationQuery: SELECT 1
+      validation-query-timeout: 500
+      filters: stat,wall
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: root
+        login-password: root321
 app:
   proxy:
     enable: true
@@ -15,9 +37,9 @@ app:
 
 open-ai:
   config:
-    apiKey: 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
+    apiKey: xxxx
     organizationName: LGX_TvT
-    organizationId: org-DEswuRylJzw25RBJsjPFYaGP
+    organizationId: xxxx
 
 mybatis-plus:
   configuration:
